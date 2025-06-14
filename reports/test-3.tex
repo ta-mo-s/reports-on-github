@@ -1,0 +1,188 @@
+\documentclass[a4paper,11pt]{jsarticle}
+
+
+% 数式
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bmpsize}
+\usepackage{float}
+% 多段組み
+\usepackage{multicol}
+% リンク
+\usepackage{url}
+% ハイパーリンク
+\usepackage[dvipdfmx]{xcolor}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{%
+  setpagesize=false,%
+  bookmarks=true,%
+  bookmarksdepth=tochdepth,%
+  bookmarksnumbered=true,%
+  colorlinks=true,%
+  linkcolor=blue,%
+  urlcolor=blue,%
+  pdftitle={},%
+  pdftitle={},%
+  pdfsubject={},%
+  pdfauthor={},%
+  pdfkeywords={}
+}
+
+
+\begin{document}
+
+\title{段落分けとかのテストをする}
+\author{tamos}
+\date{\today}
+\maketitle
+
+
+\section{段落1}
+段落の一個目だよ
+\par
+改行できたかな.改行は\verb|"\par"|でできるよ
+\par
+改行は\verb|"\\"|でもできるよ\\
+これは「強制改行」で、改行先で字下げされないよ
+
+
+enter二回でも改行できるよ
+\par
+コマンドをそのまま表示するのは\verb|"\verb"|
+\par
+段落を作るのは\verb|\section{}|
+\subsection{サブ段落1}
+サブ段落の一個目だよ
+\par
+サブ段落を作るのは\verb|\subsection{}|
+\section{段落2}
+段落の二個目だよ.
+\par
+単純箇条書きをするよ.
+\begin{itemize}
+\item 角管9mm 3本
+\item アルミプレート 10枚
+\item NUC 5つ
+\end{itemize}
+\par
+\newpage
+\section{段落3}
+列挙箇条書きをするよ.
+\begin{enumerate}
+  \item 朝起きる
+  \item ご飯食べる
+  \item 歯磨きをする
+  \item 着替える
+\end{enumerate}
+\section{段落4}
+\begin{center}
+  \includegraphics[width=5cm]{apple.png}\\
+  りんごの図
+\end{center}
+\par
+↑これはキャプションをつくれないのでレポートには不向き。
+\par
+\begin{figure}
+  \centering
+  \includegraphics[width=10cm]{2025NHKDesktop (1).png}
+  \caption{鳳翠}
+  \label{鳳と翠}
+\end{figure}
+ここで、図\ref{鳳と翠}を見てください。
+\par
+\section{段落5}
+数式を書いていくよ.
+\par
+エネルギー$E$と質量$m$は以下の関係がある
+\begin{equation}
+  E=mc^{2}
+\end{equation}
+で関係付けられる。
+\par
+$c$は光速で、
+\begin{equation}
+  \label{speed-of-light}
+  c=299{.}792{.}458 \, \mathrm{m/s}
+\end{equation}
+である。
+\par
+数式番号をつけないときは
+\[
+  1+1=2
+\]
+もしくは
+\begin{equation*}
+  1+2=3
+\end{equation*}
+でできる.
+\par
+下付き文字はこう！
+\begin{equation}
+  e_{i}
+\end{equation}
+いぇーい
+\par
+\begin{equation}
+  \frac{\pi}{2}=
+  \left(\int_{0}^{\infty} \frac{\sin x}{\sqrt{x}} dx \right)^2=
+  \sum_{k=0}^{\infty} \frac{(2k)!}{2^{2k}(k!)^2} \frac{1}{2k+1}=
+  \prod_{k=1}^{\infty} \frac{4k^2}{4k^2-1}+
+  \sum_{j=1}^{\infty} \frac{4j^2 + 2}{3}
+\end{equation}
+\section{段落6}
+\begin{multicols}{3}
+ここは３段組み。
+\par
+でも、３段組にするためにはもっと長い例文が必要なので、意味もないことをここにだらだら書き連ねています。このくらい書けば３段に分かれて組み上げられるでしょうか。こう３段になるんか、思ってたのと違うなぁ、という印象。あははははは
+\end{multicols}
+\begin{multicols}{2}
+ここは2段組み。
+\par
+でも、2段組にするためにはもっと長い例文が必要なので、意味もないことをここにだらだら書き連ねています。このくらい書けば2段に分かれて組み上げられるでしょうか。こう2段になるんか、思ってたのと違うなぁ、という印象。あははははは
+\end{multicols}
+\section{段落7}
+番号なし箇条書きはこう!
+\begin{itemize}
+  \item シャンクス
+  \item 右腕
+  \item ない
+\end{itemize}
+番号あり箇条書きはこう!
+\begin{enumerate}
+  \item おまえの
+  \item あたまは
+  \item わるい
+\end{enumerate}
+\section{段落8}
+\begin{thebibliography}{99}
+  \item Leslie Lamport『文書処理システム \LaTeX』(いしい訳, あきの, 1910年)
+  \item SOREWA=SOU『溜めれば溜めるほどいい \LaTeX』(こが訳, WADA, 1845年)
+\end{thebibliography}
+\section{段落9}
+\begin{equation}
+  A = \begin{pmatrix}
+        a_{11} & \ldots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m1} & \ldots & a_{mn}
+      \end{pmatrix}
+\end{equation}
+\section{段落10}
+\begin{tabular}{|r|c|l|} \hline
+  \multicolumn{3}{|c|}{WADA}\\ \hline
+  あ & い & う\\ \hline
+  え & お & か\\
+  わだ & WA & SOU\\ \hline
+\end{tabular}
+\section{段落11}
+真空中における光速度の定義(式 \ref{speed-of-light}), \pageref{speed-of-light}ページより、
+\par
+\section{段落12}
+\url{https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%9B%B8%E4%BA%92%E5%8F%82%E7%85%A7%E3%81%A8%E3%83%AA%E3%83%B3%E3%82%AF}
+\par
+\href{http://www.hyuki.com/girl/}{数学ガール}
+\par
+
+\end{document}
